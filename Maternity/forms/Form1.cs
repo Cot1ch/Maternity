@@ -18,8 +18,10 @@ namespace Maternity
             this.splitContainer1.Panel1.Controls.Add(this.treeView1);
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
         }
-
-
+        /// <summary>
+        /// Десериализация XML файла
+        /// </summary>
+        /// <param name="path">Путь к файлу</param>
         private void DeserializeXML(string path)
         {
             XmlDocument doc = new XmlDocument();
@@ -43,7 +45,10 @@ namespace Maternity
                 MessageBox.Show(e.Message, "Ошибка обработки XML данных");
             }
         }
-
+        /// <summary>
+        /// Девериализация JSON
+        /// </summary>
+        /// <param name="path">Путь к файлу/param>
         private void DeserializeJSON(string path)
         {
             if (!File.Exists(path))
@@ -63,8 +68,10 @@ namespace Maternity
             }
 
         }
-
-
+        /// <summary>
+        /// Загрузка TreeView
+        /// </summary>
+        /// <param name="maternity">Роддом</param>
         private void LoadTreeNode(Maternity maternity)
         {
             TreeNode node = new TreeNode(maternity.Name);

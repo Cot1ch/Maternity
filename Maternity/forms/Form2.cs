@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Maternity
 {
@@ -9,6 +10,14 @@ namespace Maternity
             InitializeComponent();
 
 
+            LoadForm(o);
+        }
+        /// <summary>
+        /// Отображение формы Подробнее
+        /// </summary>
+        /// <param name="o"></param>
+        private void LoadForm(object o)
+        {
             if (o is Doctor)
             {
                 this.labelType.Text = "Доктор";
